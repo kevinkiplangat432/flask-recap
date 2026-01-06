@@ -12,10 +12,6 @@ db.init_app(app)
 
 
 
-
-
-
-
 @app.route('/')
 def index():
     return f"hello welcome to the server"
