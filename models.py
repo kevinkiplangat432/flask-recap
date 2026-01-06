@@ -11,7 +11,7 @@ class User(db.Model):
     email = db.Column(db.String, unique=True, nullable=False)
     
     
-    post = db.relationship('Post', backpopulates='user', lazy=True)
+    post = db.relationship('Post', back_populates='user', lazy=True)
 class Post(db.Model):
     __tablename__ = "posts"
 
@@ -20,4 +20,4 @@ class Post(db.Model):
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     
-    user = db.relationship('User', backpopulates='post', lazy=True)
+    user = db.relationship('User', back_populates='post', lazy=True)
